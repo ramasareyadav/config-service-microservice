@@ -1,0 +1,7 @@
+# Everything else (port, datasource, JPA, Eureka ...) comes from the Config Server.
+# Config file served for this app: user-service.yml (+ application.yml shared by all apps)
+spring:
+  application:
+    name: user-service
+  config:
+    import: "configserver:http://localhost:8888"
