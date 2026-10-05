@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ramasareyadav/config-service-microservice
+          default-label: main
+          clone-on-start: true
+          force-pull: true
+
+# Eureka server settings: this app is the registry, it must not register with itself
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
